@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Candidate Exercise</title>
+		<link rel="stylesheet" href="/index.7043eb4b.css"><script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="s-cards row">
+				<div class="s-cards__header">
+					<h1 class="s-cards__header-title">Matching Game</h1>
+					<div class="s-cards__header-attempts"><h1>Attempts: {{attempts}}</h1></div>
+				</div>
+				<div class="s-cards__wrapper">
+					<div class="s-cards__item" v-for="card in cardDeck" :class="{ 'flipped': card.isFlipped, 'matched' : card.isMatched }" @click="flipCard(card)">
+						<div class="s-cards__item-inner">
+							<div class="s-cards__item-back">{{card.number}}</div>
+						</div>
+					</div>
+				</div>
+				<button class="s-cards__button" @click="reset">Restart</button>
+			</div>
+		</div>
+	</body>
+
+	<footer>
+		<script src="/index.fd92a775.js"></script>
+	</footer>
+</html>
